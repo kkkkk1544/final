@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <title>Budgety</title>
+         <script src="app.js"></script>
+    </head>
+    <body>
+        
+       
+       
+       <!-- 디자인 없는 모드-->
+        <div class="alert alert-primary" role="alert">
+		<h3>금액 input 박스에 금액 입력시 하단에 금액 자동계산</h3>
+	</div>
+
+	<table class="table table-bordered exam">
+		<tbody>
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">Classification</th>
+				<td class="w-70 pl-4"></td>
+			</tr>
+
+
+			<tr>
+				<th class="align-middle w-10 bg-light text-center"></th>
+				<td class="w-70 pl-4"><p type="text" style="margin-left: 180px">Amount</td>
+			</tr>
+
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">Headcount(2017-02-28)</th>
+				<td class="w-70 pl-4"><input type="text"
+					style="margin-left: 180px"></td>
+			</tr>
+
+			<!-- d9셀 출력  -->
+			<tr>
+				<th class="align-middle w-10 bg-light text-center"></th>
+				<td class="w-70 pl-4">
+                    <input type="text"
+					class="form-control num_only num_comma basic_sum Ordinary"
+                           id="price_d_nine"
+					name="fn_type2_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+
+
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">기본급①</th>
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma basic_sum Ordinary"
+					id="price_person_basic" name="fn_type2_price" value=""
+					placeholder=""> <input type="text"
+					class="form-control num_only num_comma basic_sum"
+					id="price_basic_one" name="fn_type2_price" value="" placeholder=""></td>
+			</tr>
+
+
+
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">교대 기본급②</th>
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma basic_sum Ordinary"
+					id="price_person_rotation" name="fn_type2_price" value=""
+					placeholder=""> <input type="text"
+					class="form-control num_only num_comma basic_sum"
+					id="price_basic_two" name="fn_type2_price" value="" placeholder=""></td>
+			</tr>
+
+
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">Basic ①+② 12row</th>
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma basic_sum Ordinary"
+					id="price_basic_total" name="fn_type2_price" value=""
+					placeholder="" style="margin-left: 180px"></td>
+			</tr>
+
+
+
+
+
+			<tr class="">
+				<th class="align-middle w-10 bg-light text-center">Family</th>
+
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma num_sum Ordinary" id="fn_type1_price"
+					name="fn_type1_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">Longevity</th>
+
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma num_sum Ordinary" id="fn_type2_price"
+					name="fn_type2_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">Position</th>
+
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma num_sum Ordinary" id="fn_one_price"
+					name="fn_one_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">Moten metal</th>
+
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma num_sum Ordinary" id="fn_flw_price"
+					name="fn_flw_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">
+					Qualification</th>
+
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma num_sum Ordinary" id="fn_flag_price"
+					name="fn_flag_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">상근정비기술수당</th>
+
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma num_sum Ordinary" id="fn_etc_price"
+					name="fn_etc_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+
+
+			<tr>
+				<th class="align-middle w-10 bg-light text-center">
+					Self-development</th>
+
+				<td class="w-70 pl-4"><input type="text"
+					class="form-control num_only num_comma num_sum Ordinary"
+					id="fn_change_price" name="fn_change_price" value="" placeholder=""
+					style="margin-left: 180px"></td>
+			</tr>
+
+
+			<tr>
+				<th class="align-middle bg-light text-center p-2">Sub-total</th>
+
+				<td class="pl-4" colspan="2"><input type="text"
+					class="form-control text-right font-weight-bold num_only num_comma num_sum Ordinary"
+					id="fn_total" name="fn_total" value="" placeholder=""
+					style="margin-left: 180px">
+					<div id="han_money" class="text-right"></div></td>
+			</tr>
+
+			<tr>
+				<th class="align-middle bg-light text-center p-2">Ordinary
+					wages</th>
+				<td class="pl-4" colspan="2">
+					<!--<input type="text" class="form-control num_only num_comma basic_sum"
+					 name="fn_type2_price" value="" placeholder="">-->
+					<input type="text"
+					class="form-control text-right font-weight-bold num_only num_comma num_sum Ordinary_wages"
+					id="Ordinary wages" name="fn_total" value="" placeholder=""
+					style="margin-left: 180px">
+					<div id="Ordinary wages" class="text-right"></div>
+				</td>
+			</tr>
+        </tbody>
+    </table>
+
+<table class="table table-bordered legal_table">
+			<tr class="">
+				<th class="align-middle w-10 bg-light text-center" style="
+    padding-top: 32px;
+">
+                    <p style="  padding-bottom:  2px;">   Legal allowance</p>
+                    
+           <div style="padding-top: 5px;">
+                <p> Overtime</p>
+                <p> Communication 2H</p>
+                <p> Weekly-holiday</p>
+                <p> legal-holiday</p>
+                <p> Lunar New Year, ChuSuck</p>
+                <p> Night</p>
+                <p>Holiday extended</p>
+                <p>교대OT(4조3교대 9H)</p>
+                <p>Annual leave</p>
+                <p>Monthly leave</p>    
+                 <p>Sub-total</p>
+                  </div>  
+                </th>
+
+
+				<td class="w-70 pl-4"
+					style="border-top-width: 119px; border-bottom-width: 44px;">
+                  <!--  <div style="padding-top: 69px;">-->
+
+                      <div style="padding-top: 79px;height: 429px;">
+                        
+                        
+					<p>
+
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum"  value="" id="legal_1">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px" class="legal_sum" value="" id="legal_2">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum" value="" id="legal_3">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px" class="legal_sum" value="" id="legal_4">
+					
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum" value="" id="legal_5">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum" value="" id="legal_6">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum" value=""value="" id="legal_7">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum"  value="" id="legal_8">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum" value=""  id="legal_9">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum" value="" id="legal_10">
+					</p>
+					<p>
+						<input type="text" 
+							name="fn_type1_price" value="" placeholder=""
+							style="margin-left: 180px"  class="legal_sum" value="" id="legal_sub_total">
+					</p>
+				
+                        
+                        </div>
+                        </td>
+
+
+			</tr>
+
+		
+	</table>
+
+  <script>
+        
+        
+        $(function() {
+
+			$('input.num_only').on('keyup', function() {
+				var cnt = $(".exam input.num_sum").length;
+				console.log(cnt);
+
+				for (var i = 1; i < cnt; i++) {
+					var sum = parseInt($(this).val() || 0);
+					sum++
+					console.log(sum);
+				}
+
+				var sum1 = parseInt($("#fn_type1_price").val() || 0); // input 값을 가져오며 계산하지만 값이 없을경우 0이 대입된다  뒷부분에 ( || 0 ) 없을경우 합계에 오류가 생겨 NaN 값이 떨어진다
+				var sum2 = parseInt($("#fn_type2_price").val() || 0);
+				var sum3 = parseInt($("#fn_one_price").val() || 0);
+				var sum4 = parseInt($("#fn_flw_price").val() || 0);
+				var sum5 = parseInt($("#fn_flag_price").val() || 0);
+				var sum6 = parseInt($("#fn_etc_price").val() || 0);
+				var sum7 = parseInt($("#fn_change_price").val() || 0);
+
+				var sum = sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7;
+				console.log(sum);
+				$("#fn_total").val(sum);
+			});
+
+		});
+
+
+        //Ordinary
+        
+        $(document).ready(function(){
+
+		//iterate through each textboxes and add keyup
+		//handler to trigger sum event
+		$(".Ordinary").each(function() {
+
+			$(this).keyup(function(){
+				calculateSum();
+			});
+		});
+
+	});
+
+	function calculateSum() {
+
+		var sum = 0;
+		//iterate through each textboxes and add the values
+		$(".Ordinary").each(function() {
+
+			//add only if the value is number
+			if(!isNaN(this.value) && this.value.length!=0) {
+				sum += parseFloat(this.value);
+			}
+
+		});
+		//.toFixed() method will roundoff the final sum to 2 decimal places
+		$(".Ordinary_wages").html(sum.toFixed(2));
+	}
+        
+        
+
+		$(function() {
+			$('input.num_only')
+					.on(
+							'keyup',
+							function() {
+								var cnt = $(".exam input.basic_sum").length;
+								console.log(cnt);
+
+								for (var i = 1; i < cnt; i++) {
+									var sum = parseInt($(this).val() || 0);
+									sum++
+									console.log(sum);
+								}
+								var sum1 = parseInt($("#price_person_basic")
+										.val() * 240 || 0); /*var sum1_multiple=sum1*240;*/
+
+								var sum2 = parseInt($("#price_person_rotation")
+										.val() * 240 || 0);
+
+								var sum = sum1 + sum2;
+
+								console.log(sum);
+
+								$("#price_basic_one").val(sum1);
+								$("#price_basic_two").val(sum2);
+
+								$("#price_basic_total").val(sum); /* $("#price_d_nine").val(sum/30/8);  */
+
+								var salary_dnine = sum / 30 / 8;
+								$("#price_d_nine").val(salary_dnine);
+
+							});
+		});
+        
+        
+      /*  Legal allowance  subtotal*/    
+        $(function() {
+
+			$('input.legal_sum').on('keyup', function() {
+				var cnt = $(".legal_table input.legal_sum").length;
+				console.log(cnt);
+
+				for (var i = 1; i < cnt; i++) {
+					var legal = parseInt($(this).val() || 0);
+					legal++;
+					console.log(legal);
+				}
+
+				var legal1 = parseInt($("#legal_1").val() || 0); // input 값을 가져오며 계산하지만 값이 없을경우 0이 대입된다  뒷부분에 ( || 0 ) 없을경우 합계에 오류가 생겨 NaN 값이 떨어진다
+				var legal2 = parseInt($("#legal_2").val() || 0);
+				var legal3 = parseInt($("#legal_3").val() || 0);
+				var legal4 = parseInt($("#legal_4").val() || 0);
+				var legal5 = parseInt($("#legal_5").val() || 0);
+				var legal6 = parseInt($("#legal_6").val() || 0);
+				var legal7 = parseInt($("#legal_7").val() || 0);
+                var legal8 = parseInt($("#legal_8").val() || 0);
+                var legal9 = parseInt($("#legal_9").val() || 0);
+                var legal10 = parseInt($("#legal_10").val() || 0);
+                
+                
+                
+			var legal= legal1+ legal2 + legal3+  legal4+  legal5+  legal6+  legal7+  legal8+  legal9+  legal10;
+ 
+				console.log(legal);
+				$("#legal_sub_total").val(legal);
+			});
+
+		});
+        
+        
+
+
+
+
+        
+        </script>      
+        
+        
+    </body>
+</html>
